@@ -1,0 +1,71 @@
+//# Copyright (C) 2018. F.E.Segura-Quijano (FES) fsegura@uniandes.edu.co
+//# 
+//# This program is free software: you can redistribute it and/or modify
+//# it under the terms of the GNU General Public License as published by
+//# the Free Software Foundation, version 3 of the License.
+//#
+//# This program is distributed in the hope that it will be useful,
+//# but WITHOUT ANY WARRANTY; without even the implied warranty of
+//# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//# GNU General Public License for more details.
+//#
+//# You should have received a copy of the GNU General Public License
+//# along with this program.  If not, see <http://www.gnu.org/licenses/>
+//####################################################################*/
+//=======================================================
+//  MODULE Definition
+//=======================================================
+module CC_4MUX21 (
+
+//////////// INPUTS //////////
+	CC_4MUX21_select_InLow,
+	CC_4MUX21_data6_InBUS,
+	CC_4MUX21_data5_InBUS,
+	CC_4MUX21_data4_InBUS,
+
+//////////// OUTPUTS //////////
+	CC_4MUX21_Out_Bus7,
+	CC_4MUX21_Out_Bus6,
+	CC_4MUX21_Out_Bus5,
+	CC_4MUX21_Out_Bus4
+	
+);
+//=======================================================
+//  PARAMETER declarations
+//=======================================================
+
+//=======================================================
+//  PORT declarations
+//=======================================================
+
+input 	CC_4MUX21_select_InLow;
+input 	[7:0] CC_4MUX21_data6_InBUS;
+input 	[7:0] CC_4MUX21_data5_InBUS;
+input 	[7:0] CC_4MUX21_data4_InBUS;
+
+output	[7:0] CC_4MUX21_Out_Bus7;
+output	[7:0] CC_4MUX21_Out_Bus6;
+output	[7:0] CC_4MUX21_Out_Bus5;
+output	[7:0] CC_4MUX21_Out_Bus4;
+
+//=======================================================
+//  REG/WIRE declarations
+//=======================================================
+
+//=======================================================
+//  Structural coding
+//=======================================================
+																			  
+assign CC_4MUX21_Out_Bus7 = (CC_4MUX21_select_InLow==1'b0)?8'b11110000:
+																	        8'b00000000;
+
+assign CC_4MUX21_Out_Bus6 = (CC_4MUX21_select_InLow==1'b0)?8'b11110000:
+																	        CC_4MUX21_data6_InBUS;
+																			  
+assign CC_4MUX21_Out_Bus5 = (CC_4MUX21_select_InLow==1'b0)?8'b11110000:
+																	        CC_4MUX21_data5_InBUS;
+																			  
+assign CC_4MUX21_Out_Bus4 = (CC_4MUX21_select_InLow==1'b0)?8'b11110000:
+																	        CC_4MUX21_data4_InBUS;	
+																			  					
+endmodule

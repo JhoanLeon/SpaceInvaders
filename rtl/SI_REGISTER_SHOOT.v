@@ -1,0 +1,137 @@
+//=======================================================
+//  MODULE Definition
+//=======================================================
+module SI_REGISTER_SHOOT
+(
+
+REGISTER_SHOOT_CLOCK_50,
+REGISTER_SHOOT_RESET_InLow,
+REGISTER_SHOOT_Load_InLow,
+REGISTER_SHOOT_Clear_InLow,
+REGISTER_SHOOT_DataIn_InBus,
+
+REGISTER_SHOOT_FILA7_BUS,
+REGISTER_SHOOT_FILA6_BUS,
+REGISTER_SHOOT_FILA5_BUS,
+REGISTER_SHOOT_FILA4_BUS,
+REGISTER_SHOOT_FILA3_BUS,
+REGISTER_SHOOT_FILA2_BUS,
+REGISTER_SHOOT_FILA1_BUS
+
+);
+
+//=======================================================
+//  PARAMETER declarations
+//=======================================================
+
+//=======================================================
+//  PORT declarations
+//=======================================================
+
+input REGISTER_SHOOT_CLOCK_50;
+input REGISTER_SHOOT_RESET_InLow;
+input REGISTER_SHOOT_Load_InLow;
+input REGISTER_SHOOT_Clear_InLow;
+input [7:0] REGISTER_SHOOT_DataIn_InBus;
+
+output [7:0] REGISTER_SHOOT_FILA7_BUS;
+output [7:0] REGISTER_SHOOT_FILA6_BUS;
+output [7:0] REGISTER_SHOOT_FILA5_BUS;
+output [7:0] REGISTER_SHOOT_FILA4_BUS;
+output [7:0] REGISTER_SHOOT_FILA3_BUS;
+output [7:0] REGISTER_SHOOT_FILA2_BUS;
+output [7:0] REGISTER_SHOOT_FILA1_BUS;
+
+//=======================================================
+//  REG/WIRE declarations
+//=======================================================
+
+//=======================================================
+//  Structural coding
+//=======================================================
+
+SI_REGSHIFTER_BULLET REG_1
+(
+
+.SC_RegSHIFTER_data_OutBUS(REGISTER_SHOOT_FILA1_BUS),
+.SC_RegSHIFTER_CLOCK_50(REGISTER_SHOOT_CLOCK_50),
+.SC_RegSHIFTER_RESET_InLow(REGISTER_SHOOT_RESET_InLow),
+.SC_RegSHIFTER_clear_InLow(REGISTER_SHOOT_Clear_InLow), 
+.SC_RegSHIFTER_load_InLow(REGISTER_SHOOT_Load_InLow), 
+.SC_RegSHIFTER_DataIn_InBus(REGISTER_SHOOT_DataIn_InBus)
+
+);
+
+SI_REGSHIFTER_BULLET REG_2
+(
+
+.SC_RegSHIFTER_data_OutBUS(REGISTER_SHOOT_FILA2_BUS),
+.SC_RegSHIFTER_CLOCK_50(REGISTER_SHOOT_CLOCK_50),
+.SC_RegSHIFTER_RESET_InLow(REGISTER_SHOOT_RESET_InLow),
+.SC_RegSHIFTER_clear_InLow(REGISTER_SHOOT_Clear_InLow), 
+.SC_RegSHIFTER_load_InLow(REGISTER_SHOOT_Load_InLow), 
+.SC_RegSHIFTER_DataIn_InBus(REGISTER_SHOOT_FILA1_BUS)
+
+);
+
+SI_REGSHIFTER_BULLET REG_3
+(
+
+.SC_RegSHIFTER_data_OutBUS(REGISTER_SHOOT_FILA3_BUS),
+.SC_RegSHIFTER_CLOCK_50(REGISTER_SHOOT_CLOCK_50),
+.SC_RegSHIFTER_RESET_InLow(REGISTER_SHOOT_RESET_InLow),
+.SC_RegSHIFTER_clear_InLow(REGISTER_SHOOT_Clear_InLow), 
+.SC_RegSHIFTER_load_InLow(REGISTER_SHOOT_Load_InLow), 
+.SC_RegSHIFTER_DataIn_InBus(REGISTER_SHOOT_FILA2_BUS)
+
+);
+
+SI_REGSHIFTER_BULLET REG_4
+(
+
+.SC_RegSHIFTER_data_OutBUS(REGISTER_SHOOT_FILA4_BUS),
+.SC_RegSHIFTER_CLOCK_50(REGISTER_SHOOT_CLOCK_50),
+.SC_RegSHIFTER_RESET_InLow(REGISTER_SHOOT_RESET_InLow),
+.SC_RegSHIFTER_clear_InLow(REGISTER_SHOOT_Clear_InLow), 
+.SC_RegSHIFTER_load_InLow(REGISTER_SHOOT_Load_InLow), 
+.SC_RegSHIFTER_DataIn_InBus(REGISTER_SHOOT_FILA3_BUS)
+
+);
+
+SI_REGSHIFTER_BULLET REG_5
+(
+
+.SC_RegSHIFTER_data_OutBUS(REGISTER_SHOOT_FILA5_BUS),
+.SC_RegSHIFTER_CLOCK_50(REGISTER_SHOOT_CLOCK_50),
+.SC_RegSHIFTER_RESET_InLow(REGISTER_SHOOT_RESET_InLow),
+.SC_RegSHIFTER_clear_InLow(REGISTER_SHOOT_Clear_InLow), 
+.SC_RegSHIFTER_load_InLow(REGISTER_SHOOT_Load_InLow), 
+.SC_RegSHIFTER_DataIn_InBus(REGISTER_SHOOT_FILA4_BUS)
+
+);
+
+SI_REGSHIFTER_BULLET REG_6
+(
+
+.SC_RegSHIFTER_data_OutBUS(REGISTER_SHOOT_FILA6_BUS),
+.SC_RegSHIFTER_CLOCK_50(REGISTER_SHOOT_CLOCK_50),
+.SC_RegSHIFTER_RESET_InLow(REGISTER_SHOOT_RESET_InLow),
+.SC_RegSHIFTER_clear_InLow(REGISTER_SHOOT_Clear_InLow), 
+.SC_RegSHIFTER_load_InLow(REGISTER_SHOOT_Load_InLow), 
+.SC_RegSHIFTER_DataIn_InBus(REGISTER_SHOOT_FILA5_BUS)
+
+);
+
+SI_REGSHIFTER_BULLET REG_7
+(
+
+.SC_RegSHIFTER_data_OutBUS(REGISTER_SHOOT_FILA7_BUS),
+.SC_RegSHIFTER_CLOCK_50(REGISTER_SHOOT_CLOCK_50),
+.SC_RegSHIFTER_RESET_InLow(REGISTER_SHOOT_RESET_InLow),
+.SC_RegSHIFTER_clear_InLow(REGISTER_SHOOT_Clear_InLow), 
+.SC_RegSHIFTER_load_InLow(REGISTER_SHOOT_Load_InLow), 
+.SC_RegSHIFTER_DataIn_InBus(REGISTER_SHOOT_FILA6_BUS)
+
+);
+
+endmodule

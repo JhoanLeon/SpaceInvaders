@@ -1,0 +1,118 @@
+# Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
+# do BB_SYSTEM_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Proyectos\ Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl {C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl/SC_COUNTER.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:41:27 on Sep 28,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl" C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl/SC_COUNTER.v 
+# -- Compiling module SC_COUNTER
+# 
+# Top level modules:
+# 	SC_COUNTER
+# End time: 19:41:27 on Sep 28,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Proyectos\ Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl {C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl/SC_STATEMACHINE.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:41:27 on Sep 28,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl" C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl/SC_STATEMACHINE.v 
+# -- Compiling module SC_STATEMACHINE
+# 
+# Top level modules:
+# 	SC_STATEMACHINE
+# End time: 19:41:27 on Sep 28,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Proyectos\ Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl {C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl/SC_REGP2S.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:41:27 on Sep 28,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl" C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl/SC_REGP2S.v 
+# -- Compiling module SC_REGP2S
+# 
+# Top level modules:
+# 	SC_REGP2S
+# End time: 19:41:28 on Sep 28,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Proyectos\ Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students {C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/BB_SYSTEM.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:41:28 on Sep 28,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students" C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/BB_SYSTEM.v 
+# -- Compiling module BB_SYSTEM
+# 
+# Top level modules:
+# 	BB_SYSTEM
+# End time: 19:41:28 on Sep 28,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Proyectos\ Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl {C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl/WB_SYSTEM.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:41:28 on Sep 28,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl" C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl/WB_SYSTEM.v 
+# -- Compiling module WB_SYSTEM
+# 
+# Top level modules:
+# 	WB_SYSTEM
+# End time: 19:41:28 on Sep 28,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Proyectos\ Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/simulation/modelsim {C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/simulation/modelsim/TB_SYSTEM.vt}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:41:28 on Sep 28,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/simulation/modelsim" C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/simulation/modelsim/TB_SYSTEM.vt 
+# -- Compiling module TB_SYSTEM
+# 
+# Top level modules:
+# 	TB_SYSTEM
+# End time: 19:41:28 on Sep 28,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  TB_SYSTEM
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" TB_SYSTEM 
+# Start time: 19:41:28 on Sep 28,2018
+# Loading work.TB_SYSTEM
+# Loading work.BB_SYSTEM
+# Loading work.WB_SYSTEM
+# Loading work.SC_REGP2S
+# Loading work.SC_COUNTER
+# Loading work.SC_STATEMACHINE
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Running testbench
+# 0: Tiempo: 800.  0, 36,  0
+# 1: Tiempo: 1100.  0, 129,  0
+# 2: Tiempo: 1400.  0,  9,  0
+# 3: Tiempo: 1700.  0, 99,  0
+# 4: Tiempo: 2000.  0, 13,  0
+# 5: Tiempo: 2300.  0, 141,  0
+# 6: Tiempo: 2600.  0, 101,  0
+# 7: Tiempo: 2900.  0, 18,  0
+# 8: Tiempo: 3200.  0,  1,  0
+# 9: Tiempo: 3500.  0, 13,  0
+# 10: Tiempo: 3800.  0, 118,  0
+# 11: Tiempo: 4100.  0, 61,  0
+# 12: Tiempo: 4400.  0, 237,  0
+# 13: Tiempo: 4700.  0, 140,  0
+# 14: Tiempo: 5000.  0, 249,  0
+# 15: Tiempo: 5300.  0, 198,  0
+# 16: Tiempo: 5600.  0, 197,  0
+# 17: Tiempo: 5900.  0, 170,  0
+# 18: Tiempo: 6200.  0, 229,  0
+# 19: Tiempo: 6500.  0, 119,  0
+# 20: Tiempo: 6800.  0, 18,  0
+# 21: Tiempo: 7100.  0, 143,  0
+# 22: Tiempo: 7400.  0, 242,  0
+# 23: Tiempo: 7700.  0, 206,  0
+# 24: Tiempo: 8000.  0, 232,  0
+# End time: 20:33:29 on Sep 28,2018, Elapsed time: 0:52:01
+# Errors: 0, Warnings: 0

@@ -1,0 +1,347 @@
+
+//=======================================================
+//  MODULE Definition
+//=======================================================
+module WB_SYSTEM_ALIENS (
+
+//////////// INPUTS //////////
+	WB_SYSTEM_ALIENS_CLOCK_50,
+	WB_SYSTEM_ALIENS_RESET_InLow,
+	WB_SYSTEM_ALIENS_START_InLow,
+	
+//////////// OUTPUTS //////////
+	WB_SYSTEM_ALIENS_NCS,
+	WB_SYSTEM_ALIENS_CLK,
+	WB_SYSTEM_ALIENS_DIN
+
+);
+//=======================================================
+//  PARAMETER declarations
+//=======================================================
+
+//=======================================================
+//  PORT declarations
+//=======================================================
+	
+	input	WB_SYSTEM_ALIENS_CLOCK_50;
+	input WB_SYSTEM_ALIENS_RESET_InLow;
+	input	WB_SYSTEM_ALIENS_START_InLow;
+	
+	output WB_SYSTEM_ALIENS_NCS;
+	output WB_SYSTEM_ALIENS_CLK;
+	output WB_SYSTEM_ALIENS_DIN;
+	
+//=======================================================
+//  REG/WIRE declarations
+//=======================================================
+
+wire [7:0] shoot_joiner_bus_fila7;
+wire [7:0] shoot_joiner_bus_fila6;
+wire [7:0] shoot_joiner_bus_fila5;
+wire [7:0] shoot_joiner_bus_fila4;
+wire [7:0] shoot_joiner_bus_fila3;
+wire [7:0] shoot_joiner_bus_fila2;
+wire [7:0] shoot_joiner_bus_fila1;
+
+wire [7:0] alien_joiner_bus_fila7;
+wire [7:0] alien_joiner_bus_fila6;
+wire [7:0] alien_joiner_bus_fila5;
+wire [7:0] alien_joiner_bus_fila4;
+wire [7:0] alien_joiner_bus_fila3;
+wire [7:0] alien_joiner_bus_fila2;
+wire [7:0] alien_joiner_bus_fila1;
+wire [7:0] alien_joiner_bus_fila0;
+
+wire [7:0] transition_selector_bus_fila7;
+wire [7:0] transition_selector_bus_fila6;
+wire [7:0] transition_selector_bus_fila5;
+wire [7:0] transition_selector_bus_fila4;
+wire [7:0] transition_selector_bus_fila3;
+wire [7:0] transition_selector_bus_fila2;
+wire [7:0] transition_selector_bus_fila1;
+wire [7:0] transition_selector_bus_fila0;
+
+wire [7:0] joiner_selector_bus_fila7;
+wire [7:0] joiner_selector_bus_fila6;
+wire [7:0] joiner_selector_bus_fila5;
+wire [7:0] joiner_selector_bus_fila4;
+wire [7:0] joiner_selector_bus_fila3;
+wire [7:0] joiner_selector_bus_fila2;
+wire [7:0] joiner_selector_bus_fila1;
+wire [7:0] joiner_selector_bus_fila0;
+
+wire [7:0] selector_img_bus_fila7;
+wire [7:0] selector_img_bus_fila6;
+wire [7:0] selector_img_bus_fila5;
+wire [7:0] selector_img_bus_fila4;
+wire [7:0] selector_img_bus_fila3;
+wire [7:0] selector_img_bus_fila2;
+wire [7:0] selector_img_bus_fila1;
+wire [7:0] selector_img_bus_fila0;
+
+//
+wire joiner_counta;
+wire joiner_machine_lose;
+wire counta_machine;
+wire countma_machine;
+wire countlevel_machine;
+wire countra_machine;
+wire [1:0] count4ma_machine;
+wire select_machine_to_selector;
+wire [2:0] machine_transition;
+wire machine_reg_aliens_load;
+wire machine_reg_aliens_clear;
+wire [1:0] machine_reg_aliens_shift;
+
+wire enable_countra_machine;
+
+wire machine_counter4ma_countup;
+//
+
+//
+wire end_of_count1_tomachine;
+wire end_of_count7_tomachine;
+wire machine_enable_count1;
+wire clear_shift_shoot; 
+wire load_shift_shoot;
+wire control_statemachine_mux_shoot;
+wire joiner_machine_state_bullet;
+//
+
+wire [7:0] bus_register_nave_fila0;
+wire [7:0] bus_register_shoot;
+wire [1:0] shift_selection_nave;
+wire [2:0] select_bus;
+
+wire [7:0] bus7_mux_register;
+wire [7:0] bus6_mux_register;
+wire [7:0] bus5_mux_register;
+wire [7:0] bus4_mux_register;
+
+wire selec_4mux21_statemachie;
+
+wire [7:0] data_max;
+wire [2:0] add_max;
+
+//=======================================================
+//  Structural coding
+//=======================================================
+
+SI_STATEMACHINE_ALIENS SMA_A
+(
+
+.SI_STATEMACHINE_ALIENS_CLOCK_50(WB_SYSTEM_ALIENS_CLOCK_50),
+.SI_STATEMACHINE_ALIENS_RESET_InLow(WB_SYSTEM_ALIENS_RESET_InLow),
+.SI_STATEMACHINE_ALIENS_START_InLow(WB_SYSTEM_ALIENS_START_InLow),
+.SI_STATEMACHINE_ALIENS_WIN_InLow(counta_machine),
+.SI_STATEMACHINE_ALIENS_COUNTMA_InLow(countma_machine),
+.SI_STATEMACHINE_ALIENS_COUNTRA_InLow(countra_machine),
+.SI_STATEMACHINE_ALIENS_COUNT4MA_InLow(count4ma_machine),
+.SI_STATEMACHINE_ALIENS_LOSE_InLow(joiner_machine_lose),
+	
+.SI_STATEMACHINE_ALIENS_CLEAR_OUT(machine_reg_aliens_clear),
+.SI_STATEMACHINE_ALIENS_LOAD_OUT(machine_reg_aliens_load),
+.SI_STATEMACHINE_ALIENS_SHIFT_BUS(machine_reg_aliens_shift),
+.SI_STATEMACHINE_ALIENS_TRANSITION_BUS(machine_transition),
+.SI_STATEMACHINE_ALIENS_SELECT_OUT(select_machine_to_selector),
+.SI_STATEMACHINE_ALIENS_ENABLE_COUNTMA(machine_enable_countma),
+.SI_STATEMACHINE_ALIENS_COUNTUP_COUNT4MA(machine_counter4ma_countup),
+.SI_STATEMACHINE_ALIENS_ENABLE_COUNTRA(enable_countra_machine),
+.SI_STATEMACHINE_ALIENS_SELECT_4MUX21(selec_4mux21_statemachie)
+
+);
+
+SI_REGISTER_ALIENS RSA_A
+(
+
+.REGISTER_ALIENS_CLOCK_50(WB_SYSTEM_ALIENS_CLOCK_50),
+.REGISTER_ALIENS_RESET_InLow(WB_SYSTEM_ALIENS_RESET_InLow),
+.REGISTER_ALIENS_shiftselection_InBus(machine_reg_aliens_shift),	
+.REGISTER_ALIENS_Load_InLow(machine_reg_aliens_load),
+.REGISTER_ALIENS_Clear_InLow(machine_reg_aliens_clear),
+.REGISTER_ALIENS_DataIn7_InBus(bus7_mux_register),
+.REGISTER_ALIENS_DataIn6_InBus(bus6_mux_register),
+.REGISTER_ALIENS_DataIn5_InBus(bus5_mux_register),
+.REGISTER_ALIENS_DataIn4_InBus(bus4_mux_register),
+
+.REGISTER_ALIENS_FILA7_BUS(alien_joiner_bus_fila7),
+.REGISTER_ALIENS_FILA6_BUS(alien_joiner_bus_fila6),
+.REGISTER_ALIENS_FILA5_BUS(alien_joiner_bus_fila5),
+.REGISTER_ALIENS_FILA4_BUS(alien_joiner_bus_fila4),
+.REGISTER_ALIENS_FILA3_BUS(alien_joiner_bus_fila3),
+.REGISTER_ALIENS_FILA2_BUS(alien_joiner_bus_fila2),
+.REGISTER_ALIENS_FILA1_BUS(alien_joiner_bus_fila1),
+.REGISTER_ALIENS_FILA0_BUS(alien_joiner_bus_fila0)
+
+);
+
+CC_4MUX21 MUX4_21
+(
+
+.CC_4MUX21_select_InLow(selec_4mux21_statemachie),
+.CC_4MUX21_data6_InBUS(alien_joiner_bus_fila7),
+.CC_4MUX21_data5_InBUS(alien_joiner_bus_fila6),
+.CC_4MUX21_data4_InBUS(alien_joiner_bus_fila5),
+.CC_4MUX21_Out_Bus7(bus7_mux_register),
+.CC_4MUX21_Out_Bus6(bus6_mux_register),
+.CC_4MUX21_Out_Bus5(bus5_mux_register),
+.CC_4MUX21_Out_Bus4(bus4_mux_register)
+
+);
+
+SC_COUNTERA CNTA_A
+(
+
+.SC_COUNTER_CLOCK_50(WB_SYSTEM_ALIENS_CLOCK_50),
+.SC_COUNTER_RESET_InLow(WB_SYSTEM_ALIENS_RESET_InLow),
+.SC_COUNTER_count_InLow(joiner_counta),
+.SC_COUNTER_eoc_OutLow(counta_machine)
+	
+);
+
+SC_COUNTERMA CNTMA_A
+(
+
+.SC_COUNTER_CLOCK_50(WB_SYSTEM_ALIENS_CLOCK_50),
+.SC_COUNTER_RESET_InLow(WB_SYSTEM_ALIENS_RESET_InLow),
+.SC_COUNTER_count_InLow(machine_enable_countma),
+.SC_COUNTER_eoc_OutLow(countma_machine)
+	
+);
+
+SC_COUNTERTRANSITION CNTTR_A
+(
+
+.SC_COUNTER_CLOCK_50(WB_SYSTEM_ALIENS_CLOCK_50),
+.SC_COUNTER_RESET_InLow(WB_SYSTEM_ALIENS_RESET_InLow),
+.SC_COUNTER_count_InLow(enable_countra_machine),
+.SC_COUNTER_eoc_OutLow(countra_machine)
+	
+);
+
+SC_COUNTER4MA CNT4MA_A
+(
+
+.SC_COUNTER_CLOCK_50(WB_SYSTEM_ALIENS_CLOCK_50),
+.SC_COUNTER_RESET_InLow(WB_SYSTEM_ALIENS_RESET_InLow),
+.SC_COUNTER_countup_InLow(machine_counter4ma_countup),
+.SC_COUNTER_eoc_OutLow(count4ma_machine)
+	
+);
+
+SI_TRANSITION TRNS_A
+(
+
+.transition_statemachine_aliens_ctl(machine_transition),
+.transition_selector_fila7_bus_out(transition_selector_bus_fila7),
+.transition_selector_fila6_bus_out(transition_selector_bus_fila6),
+.transition_selector_fila5_bus_out(transition_selector_bus_fila5),
+.transition_selector_fila4_bus_out(transition_selector_bus_fila4),
+.transition_selector_fila3_bus_out(transition_selector_bus_fila3),
+.transition_selector_fila2_bus_out(transition_selector_bus_fila2),
+.transition_selector_fila1_bus_out(transition_selector_bus_fila1),
+.transition_selector_fila0_bus_out(transition_selector_bus_fila0)
+
+);
+
+SI_JOINER JN_A
+(
+
+.joiner_shoot_fila7_bus_in(shoot_joiner_bus_fila7),
+.joiner_shoot_fila6_bus_in(shoot_joiner_bus_fila6),
+.joiner_shoot_fila5_bus_in(shoot_joiner_bus_fila5),
+.joiner_shoot_fila4_bus_in(shoot_joiner_bus_fila4),
+.joiner_shoot_fila3_bus_in(shoot_joiner_bus_fila3),
+.joiner_shoot_fila2_bus_in(shoot_joiner_bus_fila2),
+.joiner_shoot_fila1_bus_in(shoot_joiner_bus_fila1),
+.joiner_nave_fila0_bus_in(bus_register_nave_fila0),
+
+.joiner_aliens_fila7_bus_in(alien_joiner_bus_fila7),
+.joiner_aliens_fila6_bus_in(alien_joiner_bus_fila6),
+.joiner_aliens_fila5_bus_in(alien_joiner_bus_fila5),
+.joiner_aliens_fila4_bus_in(alien_joiner_bus_fila4),
+.joiner_aliens_fila3_bus_in(alien_joiner_bus_fila3),
+.joiner_aliens_fila2_bus_in(alien_joiner_bus_fila2),
+.joiner_aliens_fila1_bus_in(alien_joiner_bus_fila1),
+.joiner_aliens_fila0_bus_in(alien_joiner_bus_fila0),
+
+.joiner_selector_fila7_bus_out(joiner_selector_bus_fila7),
+.joiner_selector_fila6_bus_out(joiner_selector_bus_fila6),
+.joiner_selector_fila5_bus_out(joiner_selector_bus_fila5),
+.joiner_selector_fila4_bus_out(joiner_selector_bus_fila4),
+.joiner_selector_fila3_bus_out(joiner_selector_bus_fila3),
+.joiner_selector_fila2_bus_out(joiner_selector_bus_fila2),
+.joiner_selector_fila1_bus_out(joiner_selector_bus_fila1),
+.joiner_selector_fila0_bus_out(joiner_selector_bus_fila0),
+
+.joiner_counta_out(joiner_counta),
+.joiner_lose_machine_out(joiner_machine_lose),
+.joiner_estate_bullet_out()//joiner_machine_state_bullet
+
+);
+
+SI_SELECTOR_SCREEN SLT_A
+(
+
+.selector_mux_screen(select_machine_to_selector),
+
+.selector_transition_fila7_bus_in(transition_selector_bus_fila7),
+.selector_transition_fila6_bus_in(transition_selector_bus_fila6),
+.selector_transition_fila5_bus_in(transition_selector_bus_fila5),
+.selector_transition_fila4_bus_in(transition_selector_bus_fila4),
+.selector_transition_fila3_bus_in(transition_selector_bus_fila3),
+.selector_transition_fila2_bus_in(transition_selector_bus_fila2),
+.selector_transition_fila1_bus_in(transition_selector_bus_fila1),
+.selector_transition_fila0_bus_in(transition_selector_bus_fila0),
+
+.selector_joiner_fila7_bus_in(joiner_selector_bus_fila7),
+.selector_joiner_fila6_bus_in(joiner_selector_bus_fila6),
+.selector_joiner_fila5_bus_in(joiner_selector_bus_fila5),
+.selector_joiner_fila4_bus_in(joiner_selector_bus_fila4),
+.selector_joiner_fila3_bus_in(joiner_selector_bus_fila3),
+.selector_joiner_fila2_bus_in(joiner_selector_bus_fila2),
+.selector_joiner_fila1_bus_in(joiner_selector_bus_fila1),
+.selector_joiner_fila0_bus_in(joiner_selector_bus_fila0),
+
+.selector_img_fila7_bus_out(selector_img_bus_fila7),
+.selector_img_fila6_bus_out(selector_img_bus_fila6),
+.selector_img_fila5_bus_out(selector_img_bus_fila5),
+.selector_img_fila4_bus_out(selector_img_bus_fila4),
+.selector_img_fila3_bus_out(selector_img_bus_fila3),
+.selector_img_fila2_bus_out(selector_img_bus_fila2),
+.selector_img_fila1_bus_out(selector_img_bus_fila1),
+.selector_img_fila0_bus_out(selector_img_bus_fila0)
+
+);
+
+IMAGEN IMG_A
+(
+
+.img_select_add(add_max),
+.img_fila7_bus_in(selector_img_bus_fila7),
+.img_fila6_bus_in(selector_img_bus_fila6),
+.img_fila5_bus_in(selector_img_bus_fila5),
+.img_fila4_bus_in(selector_img_bus_fila4),
+.img_fila3_bus_in(selector_img_bus_fila3),
+.img_fila2_bus_in(selector_img_bus_fila2),
+.img_fila1_bus_in(selector_img_bus_fila1),
+.img_fila0_bus_in(selector_img_bus_fila0),
+.img_data_max_in(data_max)
+
+);
+
+matrix_ctrl MAXC_A
+(
+
+.max7219_din(WB_SYSTEM_ALIENS_DIN),//max7219_din 
+.max7219_ncs(WB_SYSTEM_ALIENS_NCS),//max7219_ncs 
+.max7219_clk(WB_SYSTEM_ALIENS_CLK),//max7219_clk
+.disp_data(data_max), 
+.disp_addr(add_max),
+.intensity(4'hA),
+.clk(WB_SYSTEM_ALIENS_CLOCK_50),
+.reset(WB_SYSTEM_ALIENS_RESET_InLow) 
+
+);
+
+endmodule

@@ -1,0 +1,154 @@
+//=======================================================
+//  MODULE Definition
+//=======================================================
+module SI_JOINER
+(
+
+//SI_JOINER_CLOCK_50,
+//SI_JOINER_RESET_InLow,
+
+joiner_shoot_fila7_bus_in,
+joiner_shoot_fila6_bus_in,
+joiner_shoot_fila5_bus_in,
+joiner_shoot_fila4_bus_in,
+joiner_shoot_fila3_bus_in,
+joiner_shoot_fila2_bus_in,
+joiner_shoot_fila1_bus_in,
+joiner_nave_fila0_bus_in,
+
+joiner_aliens_fila7_bus_in,
+joiner_aliens_fila6_bus_in,
+joiner_aliens_fila5_bus_in,
+joiner_aliens_fila4_bus_in,
+joiner_aliens_fila3_bus_in,
+joiner_aliens_fila2_bus_in,
+joiner_aliens_fila1_bus_in,
+joiner_aliens_fila0_bus_in,
+
+joiner_selector_fila7_bus_out,
+joiner_selector_fila6_bus_out,
+joiner_selector_fila5_bus_out,
+joiner_selector_fila4_bus_out,
+joiner_selector_fila3_bus_out,
+joiner_selector_fila2_bus_out,
+joiner_selector_fila1_bus_out,
+joiner_selector_fila0_bus_out,
+
+joiner_counta_out,
+joiner_lose_machine_out,
+joiner_estate_bullet_out 
+
+);
+
+//=======================================================
+//  PARAMETER declarations
+//=======================================================
+
+//=======================================================
+//  PORT declarations
+//=======================================================
+
+//input SI_JOINER_CLOCK_50;
+//input SI_JOINER_RESET_InLow;
+
+input [7:0] joiner_shoot_fila7_bus_in;
+input [7:0] joiner_shoot_fila6_bus_in;
+input [7:0] joiner_shoot_fila5_bus_in;
+input [7:0] joiner_shoot_fila4_bus_in;
+input [7:0] joiner_shoot_fila3_bus_in;
+input [7:0] joiner_shoot_fila2_bus_in;
+input [7:0] joiner_shoot_fila1_bus_in;
+input [7:0] joiner_nave_fila0_bus_in;
+
+input [7:0] joiner_aliens_fila7_bus_in;
+input [7:0] joiner_aliens_fila6_bus_in;
+input [7:0] joiner_aliens_fila5_bus_in;
+input [7:0] joiner_aliens_fila4_bus_in;
+input [7:0] joiner_aliens_fila3_bus_in;
+input [7:0] joiner_aliens_fila2_bus_in;
+input [7:0] joiner_aliens_fila1_bus_in;
+input [7:0] joiner_aliens_fila0_bus_in;
+
+output wire [7:0] joiner_selector_fila7_bus_out;
+output wire [7:0] joiner_selector_fila6_bus_out;
+output wire [7:0] joiner_selector_fila5_bus_out;
+output wire [7:0] joiner_selector_fila4_bus_out;
+output wire [7:0] joiner_selector_fila3_bus_out;
+output wire [7:0] joiner_selector_fila2_bus_out;
+output wire [7:0] joiner_selector_fila1_bus_out;
+output wire [7:0] joiner_selector_fila0_bus_out;
+
+output wire joiner_counta_out;
+output wire joiner_lose_machine_out;
+output wire joiner_estate_bullet_out;
+
+//=======================================================
+//  REG/WIRE declarations
+//=======================================================
+
+//=======================================================
+//  Structural coding
+//=======================================================
+
+SI_COMPARATOR_XOR U_A
+(
+
+.x_shoot_fila7_bus_in(joiner_shoot_fila7_bus_in),
+.x_shoot_fila6_bus_in(joiner_shoot_fila6_bus_in),
+.x_shoot_fila5_bus_in(joiner_shoot_fila5_bus_in),
+.x_shoot_fila4_bus_in(joiner_shoot_fila4_bus_in),
+.x_shoot_fila3_bus_in(joiner_shoot_fila3_bus_in),
+.x_shoot_fila2_bus_in(joiner_shoot_fila2_bus_in),
+.x_shoot_fila1_bus_in(joiner_shoot_fila1_bus_in),
+.x_nave_fila0_bus_in(joiner_nave_fila0_bus_in),
+
+.x_aliens_fila7_bus_in(joiner_aliens_fila7_bus_in),
+.x_aliens_fila6_bus_in(joiner_aliens_fila6_bus_in),
+.x_aliens_fila5_bus_in(joiner_aliens_fila5_bus_in),
+.x_aliens_fila4_bus_in(joiner_aliens_fila4_bus_in),
+.x_aliens_fila3_bus_in(joiner_aliens_fila3_bus_in),
+.x_aliens_fila2_bus_in(joiner_aliens_fila2_bus_in),
+.x_aliens_fila1_bus_in(joiner_aliens_fila1_bus_in),
+.x_aliens_fila0_bus_in(joiner_aliens_fila0_bus_in),
+
+.x_fila7_bus_out(joiner_selector_fila7_bus_out),
+.x_fila6_bus_out(joiner_selector_fila6_bus_out),
+.x_fila5_bus_out(joiner_selector_fila5_bus_out),
+.x_fila4_bus_out(joiner_selector_fila4_bus_out),
+.x_fila3_bus_out(joiner_selector_fila3_bus_out),
+.x_fila2_bus_out(joiner_selector_fila2_bus_out),
+.x_fila1_bus_out(joiner_selector_fila1_bus_out),
+.x_fila0_bus_out(joiner_selector_fila0_bus_out)
+
+);
+
+
+SI_XOR_OUT U_B
+(
+
+.xor_aliens_fila7_bus_in(joiner_aliens_fila7_bus_in),
+.xor_aliens_fila6_bus_in(joiner_aliens_fila6_bus_in),
+.xor_aliens_fila5_bus_in(joiner_aliens_fila5_bus_in),
+.xor_aliens_fila4_bus_in(joiner_aliens_fila4_bus_in),
+.xor_aliens_fila3_bus_in(joiner_aliens_fila3_bus_in),
+.xor_aliens_fila2_bus_in(joiner_aliens_fila2_bus_in),
+.xor_aliens_fila1_bus_in(joiner_aliens_fila1_bus_in),
+.xor_nave_fila0_bus_in(joiner_nave_fila0_bus_in),
+
+.xor_comparator_fila7_bus_in(joiner_selector_fila7_bus_out),
+.xor_comparator_fila6_bus_in(joiner_selector_fila6_bus_out),
+.xor_comparator_fila5_bus_in(joiner_selector_fila5_bus_out),
+.xor_comparator_fila4_bus_in(joiner_selector_fila4_bus_out),
+.xor_comparator_fila3_bus_in(joiner_selector_fila3_bus_out),
+.xor_comparator_fila2_bus_in(joiner_selector_fila2_bus_out),
+.xor_comparator_fila1_bus_in(joiner_selector_fila1_bus_out),
+.xor_comparator_fila0_bus_in(joiner_selector_fila0_bus_out),
+
+.xor_counta(joiner_counta_out),
+.xor_lose(joiner_lose_machine_out),
+.xor_statebullet(joiner_estate_bullet_out)
+
+);
+		
+
+endmodule

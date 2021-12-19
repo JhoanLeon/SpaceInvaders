@@ -1,0 +1,111 @@
+// Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, the Altera Quartus Prime License Agreement,
+// the Altera MegaCore Function License Agreement, or other 
+// applicable license agreement, including, without limitation, 
+// that your use is for the sole purpose of programming logic 
+// devices manufactured by Altera and sold by Altera or its 
+// authorized distributors.  Please refer to the applicable 
+// agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench template that is freely editable to  
+// suit user's needs .Comments are provided in each section to help the user    
+// fill out necessary details.                                                  
+// *****************************************************************************
+// Generated on "08/22/2016 14:40:49"
+                                                                                
+// Verilog Test Bench template for design : system
+// 
+// Simulation tool : ModelSim-Altera (Verilog)
+// 
+
+`timescale 1 ns/ 1 ns
+
+module TB_SYSTEM();
+// constants                                           
+// ============================================
+// Parameter ( may differ for physical synthesis)
+// ============================================
+	// general purpose registers
+	reg eachvec;
+	parameter TCK = 20; // clock period in ns
+	parameter CLK_FREQ = 1000000000 / TCK; // Frequenzy in HZ
+	parameter DATAWIDTH_BUS = 8;
+	integer ii=0;
+	// test vector input registers
+// ============================================
+// INTERNAL WIRE AND REG DECLARATIONS
+// ============================================
+	// wires (OUTPUTS)
+	wire TB_SYSTEM_dataserial_Out;
+	wire TB_SYSTEM_eoc_OutLow; //End of transmission
+	// reg (INPUTS)
+	reg TB_SYSTEM_CLOCK_50;
+	reg TB_SYSTEM_RESET_InHigh;
+	reg TB_SYSTEM_soc_InLow; //Start of transmission
+	reg [DATAWIDTH_BUS-1:0] TB_SYSTEM_dataparallel_BUS_In;
+	// assign statements (if any)                          
+	BB_SYSTEM BB_SYSTEM_u0 (
+	// port map - connection between master ports and signals/registers   
+		.BB_SYSTEM_dataserial_Out(TB_SYSTEM_dataserial_Out),
+		.BB_SYSTEM_eoc_OutLow(TB_SYSTEM_eoc_OutLow),
+		.BB_SYSTEM_CLOCK_50(TB_SYSTEM_CLOCK_50),
+		.BB_SYSTEM_RESET_InHigh(TB_SYSTEM_RESET_InHigh),
+		.BB_SYSTEM_soc_InLow(TB_SYSTEM_soc_InLow),
+		.BB_SYSTEM_dataparallel_BUS_In(TB_SYSTEM_dataparallel_BUS_In)
+	);
+initial                                                
+begin                                                  
+// code that executes only once                        
+// insert code here --> begin                          
+	TB_SYSTEM_CLOCK_50 <= 0;
+// --> end                                             
+$display("Running testbench");                       
+end                                                    
+always                                                 
+// optional sensitivity list                           
+// @(event1 or event2 or .... eventn)                  
+	#(TCK/2) TB_SYSTEM_CLOCK_50 <= ~ TB_SYSTEM_CLOCK_50;
+initial begin                                                  
+// code executes for every event on sensitivity list   
+// insert code here --> begin     
+                   
+	#0 	TB_SYSTEM_RESET_InHigh <= 1'b1; TB_SYSTEM_soc_InLow <= 1'b1; 
+	      TB_SYSTEM_dataparallel_BUS_In <= 8'b10100011;
+	#100 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_soc_InLow <= 1'b1; 
+	      TB_SYSTEM_dataparallel_BUS_In <= 8'b11100011;	
+	#100	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_soc_InLow <= 1'b0; 
+	      TB_SYSTEM_dataparallel_BUS_In <= 8'b10101011;
+	#100 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_soc_InLow <= 1'b1; 
+	      TB_SYSTEM_dataparallel_BUS_In <= 8'b11100011;	
+	#100 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_soc_InLow <= 1'b0; 
+	      TB_SYSTEM_dataparallel_BUS_In <= 8'b01001010;
+	#100 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_soc_InLow <= 1'b1; 
+	      TB_SYSTEM_dataparallel_BUS_In <= 8'b11100011;		
+   
+	for (ii=0; ii<25; ii=ii+1)
+		begin
+			#100
+			TB_SYSTEM_RESET_InHigh <= 1'b0;
+			TB_SYSTEM_dataparallel_BUS_In <= $random;
+			TB_SYSTEM_soc_InLow <= 1'b1;
+			#100
+			TB_SYSTEM_soc_InLow <= 1'b0;
+			#100
+			TB_SYSTEM_soc_InLow <= 1'b1;			
+         $display("%1d: Tiempo: %2d. %2d, %2d, %2d", ii, $time, TB_SYSTEM_RESET_InHigh, TB_SYSTEM_dataparallel_BUS_In ,TB_SYSTEM_soc_InLow );
+        end
+
+	//#(TCK*10000) $finish;	
+@eachvec;
+$finish;                                              
+// --> end                                             
+end                                                    
+endmodule
+

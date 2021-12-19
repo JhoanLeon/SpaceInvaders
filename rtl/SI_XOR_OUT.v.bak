@@ -1,0 +1,213 @@
+//=======================================================
+//  MODULE Definition
+//=======================================================
+module SI_XOR_OUT
+(
+
+xor_aliens_fila7_bus_in,
+xor_aliens_fila6_bus_in,
+xor_aliens_fila5_bus_in,
+xor_aliens_fila4_bus_in,
+xor_aliens_fila3_bus_in,
+xor_aliens_fila2_bus_in,
+xor_aliens_fila1_bus_in,
+xor_nave_fila0_bus_in,
+
+xor_comparator_fila7_bus_in,
+xor_comparator_fila6_bus_in,
+xor_comparator_fila5_bus_in,
+xor_comparator_fila4_bus_in,
+xor_comparator_fila3_bus_in,
+xor_comparator_fila2_bus_in,
+xor_comparator_fila1_bus_in,
+xor_comparator_fila0_bus_in,
+
+xor_counta,
+xor_lose,
+xor_statebullet
+
+);
+
+//=======================================================
+//  PARAMETER declarations
+//=======================================================
+
+//=======================================================
+//  PORT declarations
+//=======================================================
+
+input [7:0] xor_aliens_fila7_bus_in;
+input [7:0] xor_aliens_fila6_bus_in;
+input [7:0] xor_aliens_fila5_bus_in;
+input [7:0] xor_aliens_fila4_bus_in;
+input [7:0] xor_aliens_fila3_bus_in;
+input [7:0] xor_aliens_fila2_bus_in;
+input [7:0] xor_aliens_fila1_bus_in;
+input [7:0] xor_nave_fila0_bus_in;
+
+input [7:0] xor_comparator_fila7_bus_in;
+input [7:0] xor_comparator_fila6_bus_in;
+input [7:0] xor_comparator_fila5_bus_in;
+input [7:0] xor_comparator_fila4_bus_in;
+input [7:0] xor_comparator_fila3_bus_in;
+input [7:0] xor_comparator_fila2_bus_in;
+input [7:0] xor_comparator_fila1_bus_in;
+input [7:0] xor_comparator_fila0_bus_in;
+
+output xor_counta;
+output xor_lose;
+output xor_statebullet;
+
+//=======================================================
+//  REG/WIRE declarations
+//=======================================================
+
+reg counta0;
+reg counta1;
+reg counta2;
+reg counta3;
+reg counta4;
+reg counta5;
+reg counta6;
+reg counta7;
+
+reg lose;
+
+reg statebullet0;
+reg statebullet1;
+reg statebullet2;
+reg statebullet3;
+reg statebullet4;
+reg statebullet5;
+reg statebullet6;
+reg statebullet7;
+
+//=======================================================
+//  Structural coding
+//=======================================================
+
+always @(*)
+begin
+if(xor_comparator_fila0_bus_in == 8'b00010000)//xor_nave_fila0_bus_in)
+	begin
+		lose = 1;
+	end
+
+else 
+	begin
+		lose = 1;
+	end
+end
+
+
+always@(*)
+begin
+if(xor_comparator_fila1_bus_in < xor_aliens_fila1_bus_in)
+	begin
+		counta1 = 0; 
+		statebullet1 = 0;
+	end
+
+else
+	begin
+		counta1 = 1; 
+		statebullet1 = 1;
+	end
+end
+
+always@(*)
+begin
+if(xor_comparator_fila2_bus_in < xor_aliens_fila2_bus_in)
+	begin
+		counta2 = 0; 
+		statebullet2 = 0;
+	end
+
+else
+	begin
+	   counta2 = 1; 
+		statebullet2 = 1;
+	end
+end
+
+always@(*)
+begin
+if(xor_comparator_fila3_bus_in < xor_aliens_fila3_bus_in)
+	begin
+		counta3 = 0; 
+		statebullet3 = 0;
+	end
+
+else
+	begin
+		counta3 = 1; 
+		statebullet3 = 1;
+	end
+end
+
+always@(*)
+begin
+if(xor_comparator_fila4_bus_in < xor_aliens_fila4_bus_in)
+	begin
+		counta4 = 0; 
+		statebullet4 = 0;
+	end
+
+else
+	begin
+		counta4 = 1; 
+		statebullet4 = 1;
+	end
+end
+
+always@(*)
+begin
+if(xor_comparator_fila5_bus_in < xor_aliens_fila5_bus_in)
+	begin
+		counta5 = 0; 
+		statebullet5 = 0;
+	end
+
+else
+	begin
+		counta5 = 1; 
+		statebullet5 = 1;
+	end
+end
+
+always@(*)
+begin
+if(xor_comparator_fila6_bus_in < xor_aliens_fila6_bus_in)
+	begin
+		counta6 = 0; 
+		statebullet6 = 0;
+	end
+
+else
+	begin
+		counta6 = 1; 
+		statebullet6 = 1;
+	end
+end
+
+always @(*)
+begin
+if(xor_comparator_fila7_bus_in < xor_aliens_fila7_bus_in)
+	begin
+		counta7 = 0; 
+		statebullet7 = 0;
+	end
+
+else
+	begin
+		counta7 = 1; 
+		statebullet7 = 1;
+	end
+
+end
+
+assign xor_counta = counta1 | counta2 | counta3 | counta4 | counta5 | counta6 | counta7;
+assign xor_lose = lose;
+assign xor_statebullet = statebullet1 | statebullet2 | statebullet3 | statebullet4 | statebullet5 | statebullet6 | statebullet7;
+
+endmodule

@@ -1,0 +1,65 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'BB_SYSTEM_CLOCK_50'
+Slack : 11.403
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'BB_SYSTEM_CLOCK_50'
+Slack : 0.357
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'BB_SYSTEM_CLOCK_50'
+Slack : 15.442
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'BB_SYSTEM_CLOCK_50'
+Slack : 2.313
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'BB_SYSTEM_CLOCK_50'
+Slack : 9.590
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'BB_SYSTEM_CLOCK_50'
+Slack : 12.352
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'BB_SYSTEM_CLOCK_50'
+Slack : 0.311
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'BB_SYSTEM_CLOCK_50'
+Slack : 15.923
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'BB_SYSTEM_CLOCK_50'
+Slack : 2.090
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'BB_SYSTEM_CLOCK_50'
+Slack : 9.568
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'BB_SYSTEM_CLOCK_50'
+Slack : 14.906
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'BB_SYSTEM_CLOCK_50'
+Slack : 0.186
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'BB_SYSTEM_CLOCK_50'
+Slack : 17.291
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'BB_SYSTEM_CLOCK_50'
+Slack : 1.287
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'BB_SYSTEM_CLOCK_50'
+Slack : 9.270
+TNS   : 0.000
+
+------------------------------------------------------------

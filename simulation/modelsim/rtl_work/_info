@@ -1,0 +1,148 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/simulation/modelsim
+vBB_SYSTEM
+Z1 !s110 1538181688
+!i10b 1
+!s100 EAo3[H3J2AF@k7In^n6W_1
+I4Q6lhQnn:Zd=8H9<b1_0[0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1519991564
+8C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/BB_SYSTEM.v
+FC:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/BB_SYSTEM.v
+Z3 L0 27
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1538181688.000000
+!s107 C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/BB_SYSTEM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students|C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/BB_SYSTEM.v|
+!i113 1
+Z6 o-vlog01compat -work work
+!s92 -vlog01compat -work work {+incdir+C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students}
+Z7 tCvgOpt 0
+n@b@b_@s@y@s@t@e@m
+vSC_COUNTER
+Z8 !s110 1538181687
+!i10b 1
+!s100 1T9ON0fo^C8YPFA;NQTEQ0
+I^zO<5Tnnk8_1]7N4FeDGJ1
+R2
+R0
+w1519993412
+8C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl/SC_COUNTER.v
+FC:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl/SC_COUNTER.v
+R3
+R4
+r1
+!s85 0
+31
+Z9 !s108 1538181687.000000
+!s107 C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl/SC_COUNTER.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl|C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl/SC_COUNTER.v|
+!i113 1
+R6
+Z10 !s92 -vlog01compat -work work {+incdir+C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl}
+R7
+n@s@c_@c@o@u@n@t@e@r
+vSC_REGP2S
+R1
+!i10b 1
+!s100 Ac9Z<S6@2VF8`bmjFb9Xe1
+I2]<nFb=_@3`_]<LJ3OQQf3
+R2
+R0
+w1519992026
+8C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl/SC_REGP2S.v
+FC:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl/SC_REGP2S.v
+R3
+R4
+r1
+!s85 0
+31
+R9
+!s107 C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl/SC_REGP2S.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl|C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl/SC_REGP2S.v|
+!i113 1
+R6
+R10
+R7
+n@s@c_@r@e@g@p2@s
+vSC_STATEMACHINE
+R8
+!i10b 1
+!s100 H<n?a4ZI7c:i@TgkB2J;D2
+IDcbJ@_GZLlZobP]IeD@0T2
+R2
+R0
+w1537989928
+8C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl/SC_STATEMACHINE.v
+FC:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl/SC_STATEMACHINE.v
+L0 2
+R4
+r1
+!s85 0
+31
+R9
+!s107 C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl/SC_STATEMACHINE.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl|C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl/SC_STATEMACHINE.v|
+!i113 1
+R6
+R10
+R7
+n@s@c_@s@t@a@t@e@m@a@c@h@i@n@e
+vTB_SYSTEM
+R1
+!i10b 1
+!s100 =U[oHdA5H`]389ZKGZEz73
+IMZVcQ=Q0SPbW=A]T97AL_2
+R2
+R0
+w1538065284
+8C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/simulation/modelsim/TB_SYSTEM.vt
+FC:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/simulation/modelsim/TB_SYSTEM.vt
+L0 29
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/simulation/modelsim/TB_SYSTEM.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/simulation/modelsim|C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/simulation/modelsim/TB_SYSTEM.vt|
+!i113 1
+R6
+!s92 -vlog01compat -work work {+incdir+C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/simulation/modelsim}
+R7
+n@t@b_@s@y@s@t@e@m
+vWB_SYSTEM
+R1
+!i10b 1
+!s100 noE1hI`AKf`7C?7X0TTYW1
+IcQP]VodQ`EUV_3L?P`A8O0
+R2
+R0
+w1519991990
+8C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl/WB_SYSTEM.v
+FC:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl/WB_SYSTEM.v
+R3
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl/WB_SYSTEM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl|C:/Proyectos Quartus/Proyecto_BibliotecaSecuencial/PRJ0_Parallel2Serial_1_2_Students/rtl/WB_SYSTEM.v|
+!i113 1
+R6
+R10
+R7
+n@w@b_@s@y@s@t@e@m
